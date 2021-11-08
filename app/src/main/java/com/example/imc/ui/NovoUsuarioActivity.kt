@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
+import androidx.core.graphics.drawable.toBitmap
 import com.example.imc.R
 import com.example.imc.model.Usuario
 import com.example.imc.utils.convertBitmapToBase64
@@ -49,6 +50,9 @@ class NovoUsuarioActivity : AppCompatActivity() {
         tvTrocarFoto = findViewById(R.id.tv_trocar_foto)
         ivFotoPerfil = findViewById(R.id.iv_foto_perfil)
 
+//        Carregar bitmap padrão caso o usuário não escolha uma foto.
+        imageBitmap = BitmapFactory.decodeResource(
+            resources, R.drawable.person_24)
 
         supportActionBar!!.title = "Novo usuário"
 
